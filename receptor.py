@@ -1,12 +1,26 @@
 import socket
 import pickle
+from time import time
+import csv
 
 def decodificar(pickle_cadena):
+    start_time = time()
     cadena_bits = ''.join([ '1' if x else '0' for x in picke_cadena ])
+    end_time = time()-start_time
     print (cadena_bits)
 
-HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
-PORT = 65432        # Port to listen on (non-privileged ports are > 1023)
+
+
+    archivo= open('tiempo_correccion.csv','a')
+
+    with archivo:
+        archivo.write(str(end_time) + "\n")
+        print ('tiempo de ejecucion',end_time)
+    
+
+HOST = '127.0.0.1'  
+PORT = 65432        
+
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
