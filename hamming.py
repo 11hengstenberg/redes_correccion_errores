@@ -20,7 +20,6 @@ def posRedundantBits(data, r):
     return res[::-1] 
   
   
-def calcParityBits(arr, r): 
     n = len(arr) 
 
     for i in range(r): 
@@ -31,7 +30,8 @@ def calcParityBits(arr, r):
                 val = val ^ int(arr[-1 * j]) 
 
         arr = arr[:n-(2**i)] + str(val) + arr[n-(2**i)+1:] 
-    return arr 
+    return arr def calcParityBits(arr, r): 
+
 
 def calcRedundantBits(data): 
 

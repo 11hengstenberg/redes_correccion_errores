@@ -11,7 +11,7 @@ def decodificar(pickle_cadena):
     #print (cadena_bits)
 
     cadena_string = ''.join(chr(int(''.join(x), 2)) for x in zip(*[iter(cadena_bits)]*7))
-    #print ('cadena string', cadena_string)
+    print ('cadena string', cadena_string)
     cadena_hamming = hm(cadena_bits)
 
 
